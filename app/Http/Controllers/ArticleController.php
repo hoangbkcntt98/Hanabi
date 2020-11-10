@@ -41,26 +41,22 @@ class ArticleController extends Controller
     }
 
     public function create(Request $request){
-        $new_article = new Article();
+        // $new_article = new Article();
+        DB::table('review')->insert([
+            'user_name' => $request->title,
+            'flower_id' => $request->product_id,
+            'content' => $request->text,
+        ]);
 
-        if($request->hasFile('article_image')){
-            $file = $request->article_image;
-            $file->move('images', $file->getClientOriginalName());
-            $new_article->image = $file->getClientOriginalName();
-        }
-        else {
-            $new_article->image = "default.jpg";
-        }
+        // $new_article->title = $request->title;
+        // $new_article->product_id = $request->product_id;
+        // $new_article->description = $request->description;
+        // $new_article->content = $request->text;
+        // $new_article->published = 1;
+        // $new_article->published_at = \Carbon\Carbon::now();
 
-        $new_article->title = $request->title;
-        $new_article->product_id = $request->product_id;
-        $new_article->description = $request->description;
-        $new_article->content = $request->text;
-        $new_article->published = 1;
-        $new_article->published_at = \Carbon\Carbon::now();
-
-        $new_article->user_id = Auth::id();
-        $new_article->save();
-        return redirect()->route('show_product_details', ['id' => $new_article->product_id]);
+        // $new_article->user_id = Auth::id();
+        // $new_article->save();
+        return redirect()->route('show_product_details', ['id' =>$request->product_id]);
     }
 }

@@ -4,26 +4,18 @@
 
 @section('content')
     <div class="card">
-        <div class="card-header title">Create New Article</div>
+        <div class="card-header title">Create New Review</div>
 
-        <div class="card-body">
-            <form enctype="multipart/form-data" method="post">
+        <div class="card-body login-wrap">
+            <form enctype="multipart/form-data" method="post" >
                 {{ csrf_field() }}
-                <div class="input_image">
-                    <div>
-                        <img class="preview_image" id="preview" src="#" alt="article image" />
-                    </div>
-                    <div>
-                        <input type="file" name="article_image" id="imgInp">
-                    </div>
-                </div>
-
+                
                 <div>
-                    <textarea class="textarea_article" name="title" placeholder="input title..." required="true"></textarea>
+                    <textarea class="textarea_article" name="title" placeholder="Name" required="true"></textarea>
                     <br>
-                    <textarea class="textarea_article" name="description" placeholder="input description" required="true"></textarea>
+                    <textarea class="textarea_article" name="description" placeholder="Title" required="true"></textarea>
                     <br>
-                    <textarea class="textarea_article content" name="text" placeholder="input content of article..." required="true"></textarea>
+                    <textarea class="textarea_article content" name="text" placeholder="Content" required="true"></textarea>
                 </div>
                 <div class="center_button">
                     <button type="submit" class = "btn btn-primary btn-sm" id="submit-button" name="product_id" value={{$product_id}}>Submit</button>

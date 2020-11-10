@@ -31,14 +31,14 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="pull-left">
-							<a href="{{route('/')}}"><img src="{{asset('layouts/images')}}/home/logo.png" alt="" height="60px" /></a>
+							<!-- <a href="{{route('/')}}"><img src="{{asset('layouts/images')}}/home/logo.png" alt="" height="60px" /></a> -->
 						</div>
 
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-							@guest
+							<!-- @guest
                             	<li><a href="{{ route('login') }}"><i class="fa fa-lock"></i>Login</a></li>
                             		@if (Route::has('register'))
                                 		<li><a href="{{ route('register') }}"><i class="fa fa-lock"></i>Register</a></li>
@@ -63,7 +63,7 @@
                                     	</form>
                                 	</ul>
                             	</li>
-                        	@endguest
+                        	@endguest -->
 							</ul>
 						</div>
 					</div>
@@ -86,7 +86,7 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="/" class="active">Home</a></li>
-								<li><a href="#">News</a></li>
+								<!-- <li><a href="#">News</a></li>
 								<li class="dropdown"><a href="/list">Products<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="/list">Products</a></li>
@@ -99,7 +99,7 @@
 {{--										<li><a href="blog-single.html">Blog Single</a></li>--}}
 {{--                                    </ul>--}}
 {{--                                </li>--}}
-								<li><a href="#">Contact</a></li>
+								<li><a href="#">Contact</a></li> -->
 							</ul>
 						</div>
 					</div>

@@ -15,7 +15,7 @@
                 <div class="card-header">
                     <p class="text">Author: {{$author->name}}
                         <br/>
-                    Published at: {{$article->published_at}}
+                    Published at: {{$article->created_at}}
                     </p>
                 </div>
                 <div class="body content">

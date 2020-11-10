@@ -5,14 +5,14 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-class Product extends Model {
+class Flower extends Model {
     /**
      * Find Product By Id
      * @param $id
      * @return \Illuminate\Support\Collection
      */
     protected function findProductById($id) {
-        return DB::table('flower')->where('products.id', $id)->get();
+        return DB::table('products')->join('brand','products.brand_id','=','brand.id')->where('products.id', $id)->get();
     }
 
     /**
@@ -24,9 +24,11 @@ class Product extends Model {
     }
 
     protected function findAll(){
-        return DB::table('products')->get();
+        return DB::table('flower')->get();
     }
-
+    protected function findAllShop(){
+        return DB::table('flower_shop')->get();
+    }
     public function scopeBrand_Id($query, $request)
     {
         if ($request->has('brand_id')) {

@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.home');
-})->name('/');
+// Route::get('/', function () {
+//     return view('layouts.home');
+// })->name('/');
 Route::resource('user','ProfileController');
 Auth::routes();
 Route::get('/user_search', 'ProfileController@search')->name('user_search');
@@ -26,7 +26,7 @@ Route::get('/pro_search', 'ProfileController@pro_search')->name('pro_search');
 Route::delete('/del_pro', 'ProfileController@destroy_pro')->name('del_pro');
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/list', 'ListController@index')->name('list');
+Route::get('/', 'ListController@index')->name('/');
 Route::get('/search', 'ListController@search')->name('search');
 Route::get('/filter', 'ListController@filter')->name('filter');
 Route::get('/autocomplete', 'ListController@auto_complete')->name('autocomplete');

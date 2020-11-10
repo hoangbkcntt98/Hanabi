@@ -23,18 +23,11 @@
 	
 	@include("layouts.elements.top")
 	<!--/slider-->
-	<?php
-			$r = Route::currentRouteName();
-			if(($r=="/"))
-			{
-				?>@include('layouts.elements.slide')"<?php
-			
-			}?>
+	
 	<section>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3">
-				
 					@include("layouts.elements.sidebar")
 				</div>
 				
