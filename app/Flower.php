@@ -30,19 +30,19 @@ class Flower extends Model {
     protected function findAllShop(){
         return DB::table('flower_shop')->get();
     }
-    public function scopeBrand_Id($query, $request)
+    public function scopeSize($query, $request)
     {
-        if ($request->has('brand_id')) {
-            $query->where('brand_id', $request->brand_id);
+        if ($request->has('size')) {
+            $query->where('size', $request->size);
         }
 
         return $query;
     }
 
-    public function scopeCpu($query, $request)
+    public function scopeCategory($query, $request)
     {
-        if ($request->has('cpu')) {
-            $query->where('cpu', 'like', '%' . $request->cpu . '%');
+        if ($request->has('category')) {
+            $query->where('category', 'like', '%' . $request->category . '%');
         }
 
         return $query;
@@ -66,12 +66,5 @@ class Flower extends Model {
         return $query;
     }
 
-    public function scopeSize($query, $request)
-    {
-        if ($request->has('size')) {
-            $query->where('size', 'like', '%' . $request->size . '%');
-        }
-
-        return $query;
-    }
+  
 }

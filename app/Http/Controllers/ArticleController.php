@@ -41,22 +41,13 @@ class ArticleController extends Controller
     }
 
     public function create(Request $request){
-        // $new_article = new Article();
         DB::table('review')->insert([
-            'user_name' => $request->title,
-            'flower_id' => $request->product_id,
-            'content' => $request->text,
+            'flower_id' => $request->id,
+            'content' => $request->review,
+            'user_name' => $request->user
         ]);
 
-        // $new_article->title = $request->title;
-        // $new_article->product_id = $request->product_id;
-        // $new_article->description = $request->description;
-        // $new_article->content = $request->text;
-        // $new_article->published = 1;
-        // $new_article->published_at = \Carbon\Carbon::now();
-
-        // $new_article->user_id = Auth::id();
-        // $new_article->save();
-        return redirect()->route('show_product_details', ['id' =>$request->product_id]);
+        
+        return redirect()->route('show_product_details', ['id' =>1]);
     }
 }

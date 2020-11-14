@@ -91,20 +91,56 @@
                         </div>
                     </div>
                     @endforeach
-                    <a href="{{url()->current()."/create_article"}}">
-                            <button type="button" class="btn btn-primary btn-lg pull-right">
-                                Add Reviews
+                   
+                    <!-- Button trigger modal -->
+                    <button type="button"  class="btn btn-primary btn-lg pull-left" data-toggle="modal" data-target="#exampleModalScrollable">
+                        Add Reviews
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Add a review</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
                             </button>
-                    </a>
+                        </div>
+                        <div class="modal-body">
+                      
+                
+                        <form action="{{route('create_new_article',$product->id)}}" method = "POST" id = "review" class = "login-form">
+                             {{ csrf_field() }}
+                            <input type="hidden" id="id" name="custId" value="{{$product->id}}">
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
+                                <div class="col-sm-7">
+                                <input type="text"  class="form-control" name="user" form = "review" placeholder="Enter your name" >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-2 col-form-label">Review</label>
+                                <div class="col-sm-10">
+                                <textarea class="textarea_article" name="review" placeholder="Reviews" required="true" form="review"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <button type="submit" class="btn btn-primary">Add Review</button>
+                            </div>
+                           
+                        </form>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
                 </div>
                 @elseif($list_articles == null)
                     <div>
                         <h3>No Reviews For this product. Please add Reviews the product at here!!!</h3>
-                        <a href="{{url()->current()."/create_article"}}">
-                            <button type="button" class="btn btn-primary btn-lg pull-right">
-                                Add Reviews
-                            </button>
-                        </a>
+                        <button type="button"  class="btn btn-primary btn-lg pull-left" data-toggle="modal" data-target="#exampleModalScrollable">
+                        Add Reviews
+                    </button>
                     </div>
                 @endif
 

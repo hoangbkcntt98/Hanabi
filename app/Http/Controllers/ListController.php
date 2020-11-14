@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Product;
+use App\Flower;
 
 class ListController extends Controller
 {
@@ -21,39 +22,14 @@ class ListController extends Controller
 
     public function filter(Request $request)
     {
-        // $product = Product::query()
-        //     ->brand_id($request)
-        //     ->cpu($request)
-        //     ->ram($request)
-        //     ->disk($request)
-        //     ->size($request);
-        // $brand_id = $request->input('brand_id');
-        // $cpu= $request->input('cpu');
-        // $ram= $request->input('ram');
-        // $disk= $request->input('disk');
-        // $size= $request->input('size');
-        // $product = Product::query();
-        // if($brand_id!=null){
-        //     $product = $product->brand_id($request);
-        // }
-        // if($cpu!=null){
-        //     $product = $product->cpu($request);
-        // }
-        // if($ram!=null){
-        //     $product = $product->ram($request);
-        // }
-        // if($disk!=null){
-        //     $product = $product->disk($request);
-        // }
-        // if($size!=null){
-        //     $product = $product->size($request);
-        // }
+        $product = Flower::query()->category($request)->size($request);
+        $category = $request->input('category');
+        $size = $request->input('size');
         
-        // $products =  $product->paginate(12);
         $products =DB::table('flower')->join('flower_shop','flower_shop.id','=','flower.flower_shop_id')->select('flower.name','flower_shop.name as flower_shop_name',
         'category','flower.id','flower.image','flower.price','flower_shop.address',
         'flower_shop.phone',
-        'flower.count_rates','flower_shop.name','flower.stars_rate','flower.created_at')->orderBy('flower.id')->paginate(12);
+        'flower.count_rates','flower_shop.name','flower.stars_rate','flower.created_at','flower.size')->where([['size','=',$size],['category','=',$category]])->orderBy('flower.id')->paginate(12);
         
         return view('list.index', ['products' => $products]);
     }

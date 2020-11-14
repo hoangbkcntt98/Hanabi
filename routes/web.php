@@ -41,3 +41,4 @@ Route::get('/product-details/{id}/articles/{id_article}', 'ArticleController@ind
 Route::post('/product-details/{id}/articles/{id_article}','ArticleController@comment')->name('make_comment');
 Route::get('/product-details/{id}/create_article','ArticleController@show_form')->name('show_new_article_form');
 Route::post('/product-details/{id}/create_article','ArticleController@create')->name('create_new_article');
+// Route::post('/product-details/{id}/create_article','ArticleController@create')->name('add_reviewflower');
