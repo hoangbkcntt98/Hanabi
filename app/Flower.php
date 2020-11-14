@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 class Flower extends Model {
+    protected $table = "flower";
     /**
      * Find Product By Id
      * @param $id

@@ -15,6 +15,14 @@ class CreateFlowerTable extends Migration
     {
         Schema::create('flower', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->unsignedBigInteger('flower_shop_id');
+            $table->foreign('flower_shop_id')->references('id')->on('flower_shop');
+            $table->float('price');
+            $table->string('image');
+            $table->string('category');
+            $table->float('stars_rate')->default(0);
+            $table->integer('count_rates')->default(0);
             $table->timestamps();
         });
     }

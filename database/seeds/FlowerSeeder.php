@@ -34,6 +34,7 @@ class FlowerSeeder extends Seeder
                 'category' => $fake->randomElement($category),
                 'image' => $fake->randomElement($image),
                 'price' => $fake->numberBetween(1000, 5000),
+                'size' => $fake->numberBetween(1,3),
                 'flower_shop_id' => $fake->randomElement($flower_shop_id)
             ]);
         }

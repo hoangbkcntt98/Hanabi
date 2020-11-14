@@ -24,19 +24,37 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <a href="{{ url('product-details', [$product->id]) }}"><img src="{{$product->image}}" alt="product" class="product-img"></a>
+                                        <a href="{{ url('product-details', [$product->id]) }}"><img src="{{$product->image}}" width = '215px' height= "215px" alt="product" class="product-img"></a>
                                         <a href="{{ url('product-details', [$product->id]) }}"><h3>{{ $product->name }}</h3> </a>
                                         <div class="star">
+                                        @for($i=0;$i<5;$i++)
+                                            @if($i<$product->stars_rate)
+                                            <span class="fa fa-star" style = "color:orange;"></span>
+                                            @else
+                                        <span class="fa fa-star"></span>
+                                        @endif
                                             
-                                            <img src="layouts/images/home/star.png" alt="" class="star-rating">
+                                        @endfor
+    
+                                            <!-- <div> -->
+                                           
+                                        
                                         </div>
+                                        <h2 style = "color:orange"> ${{$product->price}}</h2>
+                                           
                                     </div> <!-- end caption -->
                                     <div class="product-overlay">
                                         <div class="overlay-content">
                                             <a href="{{ url('product-details', [$product->id]) }}">
                                                 <p><b>Name:</b>{{$product->name}}</p>
                                                 <p><b>Category:</b> {{$product->category}}</p>
+                                                <!-- <div class="star">
+                                                    <img src="layouts/images/home/star.png" width = "20px" height = "20px" alt="" class="star-rating">
+                                                </div> -->
+                                                <br>
                                                 <p><b>Shop:</b> {{$product->flower_shop_name}}</p>
+                                                <p><b>Price:</b> {{$product->price}}</p>
+                                                
                                               
                                             </a>
                                         </div>
