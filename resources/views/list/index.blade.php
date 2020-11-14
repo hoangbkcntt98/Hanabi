@@ -67,6 +67,11 @@
             @endforeach
             {{$products->render()}}
         @else
+        <script type="text/javascript">
+            $(window).on('load',function(){
+                alert("No Result!!!");
+            });
+        </script>
                     <div class="text-center">
                         <h3>No result!!!</h3>
                     </div>

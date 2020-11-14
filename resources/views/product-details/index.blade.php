@@ -19,13 +19,13 @@
                    
                     <p><b>Liên lạc: </b> +34{{$product->phone}}</p>
                     @if($product->size == 1)
-                    <p><b>Cỡ: </b> Small</p>
+                    <p><b>Cỡ: </b> Nhỏ</p>
                     @endif
                     @if($product->size == 2)
-                    <p><b>Cỡ: </b> Medium</p>
+                    <p><b>Cỡ: </b> Vừa</p>
                     @endif
                     @if($product->size == 3)
-                    <p><b>Cỡ: </b> Large</p>
+                    <p><b>Cỡ: </b> Lớn</p>
                     @endif
                     </div>
                     <span>
