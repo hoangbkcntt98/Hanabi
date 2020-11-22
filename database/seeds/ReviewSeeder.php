@@ -12,7 +12,7 @@ class ReviewSeeder extends Seeder
     public function run()
     {
          $fake = \Faker\Factory::create();
-        $content = ["It's ok","OK","Bad","so bad","very good"];
+        $content = ["Ờ mây zing gút chóp em","OK","Bad","so bad","very good"];
         for($i = 0; $i < 100; $i++){
 
             DB::table('review')->insert([

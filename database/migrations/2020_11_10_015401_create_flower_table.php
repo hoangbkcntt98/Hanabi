@@ -21,6 +21,7 @@ class CreateFlowerTable extends Migration
             $table->float('price');
             $table->string('image');
             $table->string('category');
+            $table->integer('size');
             $table->float('stars_rate')->default(0);
             $table->integer('count_rates')->default(0);
             $table->timestamps();

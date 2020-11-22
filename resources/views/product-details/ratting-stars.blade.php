@@ -44,7 +44,7 @@
                 $("#vote-stars-result").html(function (data){
                     return "<b>Vote Rate: <i>(Total Rate:" + dataJson["count_rates"] + " votes, rate average " + dataJson["stars_rate"] + ")</i></b>\n"
                 })
-               
+               location.reload();
             },
             error: function (data) {
                 console.log("error post rating stars " );

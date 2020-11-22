@@ -85,7 +85,6 @@
                                 <li><a href=""><i class="fa fa-user"></i>{{$article->user_name}}</a>
                                 </li>
                                 <li><a href=""><i class="fa fa-clock-o"></i>{{$article->created_at}}</a></li>
-                                <li><a href=""><i class="fa fa-calendar-o"></i>{{$article->updated_at}}</a></li>
                             </ul>
                             <a href={{url()->current()."/articles/".$article->id}}>{{$article->content}}</a>
                         </div>
